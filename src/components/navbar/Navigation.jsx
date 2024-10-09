@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/useContext';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {user, logout, admin } = useAuth()
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   const menuItems = ['Home', 'About', 'Price', 'Services', 'Contact'];
 
@@ -36,8 +44,29 @@ const NavBar = () => {
               
                <Link to='/class' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Class</Link>
                <Link to='/topic' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Topic</Link>
-               <Link to='/blog' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Blog</Link>
-               <Link to='/login' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Login</Link>
+             {
+              admin ? (
+                <Link to='/admin' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Admin</Link>
+              ) : 
+              (
+                <Link to='/blog' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Blog</Link>
+              )
+             }
+               {user ? (
+              <button
+                onClick={handleLogout}
+                className="text-gray-600 hover:bg-teal-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to='/login'
+                className="text-gray-600 hover:bg-teal-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Login
+              </Link>
+            )}
 
 
             </div>

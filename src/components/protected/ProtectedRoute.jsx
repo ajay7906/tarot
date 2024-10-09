@@ -28,13 +28,13 @@ import { Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/useContext';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { user } = useAuth();
+  const { user , admin } = useAuth();
 
   return (
     <Route
       {...rest}
       element={
-        user ? (
+        admin ? (
           <Component />
         ) : (
           <Navigate to="/login" replace />
