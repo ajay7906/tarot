@@ -431,8 +431,8 @@ const AuthForm = () => {
 
     try {
       if (isLogin) {
-        // Call login API
-        const response = await axios.post('http://localhost:5000/api/signin', { email, password });
+        // Call login API   https://tarotbydeepa.com/   http://localhost:5000    http://88.222.213.80:5000
+        const response = await axios.post('  http://88.222.213.80:5000/api/signin', { email, password });
         console.log('Login response:', response.data);
 
         const token = response.data.token;
@@ -448,7 +448,7 @@ const AuthForm = () => {
         }
       } else {
         // Call signup API
-        const response = await axios.post('http://localhost:5000/api/signup', { name: username, email, password });
+        const response = await axios.post('  http://88.222.213.80:5000/api/signup', { name: username, email, password });
         console.log('Signup response:', response.data);
 
         if (response.status === 200) {

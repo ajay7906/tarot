@@ -347,7 +347,7 @@ const CheckoutForm = ({ plan, onSuccess, onError }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/create-payment', {
+      const response = await axios.post('http://88.222.213.80:5000/api/create-payment', {
         amount: plan.price,
         currency: 'usd',
       });
@@ -413,7 +413,7 @@ const TarotClasses = () => {
 
   const handlePaymentSuccess = async (paymentIntent) => {
     try {
-      await axios.post('http://localhost:5000/api/payment-success', {
+      await axios.post('http://88.222.213.80:5000/api/payment-success', {
         paymentIntentId: paymentIntent.id,
         courseId: selectedPlan.title,
       });

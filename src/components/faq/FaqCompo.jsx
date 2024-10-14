@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import First from '../../assets/first.jpeg';
+import Second from '../../assets/second.jpeg';
 const FAQItem = ({ question, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -51,13 +52,13 @@ const AnimatedFAQComponent = () => {
           className="relative"
         >
           <motion.img
-            src="/api/placeholder/400/400"
+            src={First}
             alt="Tarot reader 1"
             className="w-64 h-64 object-cover rounded-full shadow-lg z-10 relative"
             whileHover={{ scale: 1.05 }}
           />
           <motion.img
-            src="/api/placeholder/400/400"
+            src={Second}
             alt="Tarot reader 2"
             className="w-64 h-64 object-cover rounded-full shadow-lg absolute top-32 left-32"
             whileHover={{ scale: 1.05 }}
