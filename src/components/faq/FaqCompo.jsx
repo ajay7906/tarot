@@ -43,7 +43,7 @@ const FAQItem = ({ question, children }) => {
 
 const AnimatedFAQComponent = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 p-4 md:p-8 flex flex-col md:flex-row items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br bg-gray-100 p-4 md:p-8 flex flex-col md:flex-row items-center justify-center">
       <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

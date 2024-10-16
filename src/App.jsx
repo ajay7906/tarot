@@ -14,6 +14,14 @@ import NavBar from './components/navbar/Navigation'
 import AnimatedFooter from './components/footer/Footer'
 import TarotTopics from './pages/topicpage/TarotTopicpage'
 import BlogPage from './pages/blogpage/BlogPage'
+import InternationalTarotPage from './pages/internationalpage/Internationa'
+import TarotPackagesPagesInr from './pages/internationalpage/Internationa'
+import Career from './pages/topics/carrer/Career'
+import IndianPage from './pages/indian/IndianPage'
+import HealingPage from './pages/topics/healing/Healing'
+import Love from './pages/topics/love/Love'
+import Personal from './pages/topics/personal/Personal'
+import Guidance from './pages/guidance/Guidance'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +38,14 @@ function App() {
             <Route path="/class" element={<TarotClasses/>} />
             <Route path="/topic" element={<TarotTopics/>} />
             <Route path='/blog' element={<BlogPage/>}/>
+            <Route path='/career' element={<Career/>}/>
+            <Route path='pricing/international' element={<TarotPackagesPagesInr/>} />
+            <Route path='pricing/india' element={<IndianPage/>} />
+            <Route path='topic/career' element={<Career/>} />
+            <Route path='topic/healing' element={<HealingPage/>} />
+            <Route path='topic/relationship' element={<Love/>} />
+            <Route path='topic/personal' element={<Personal/>} />
+            <Route path='/guidance' element={<Guidance/>} />
             {/* <ProtectedRoute path='/admin' component={<AdminPanel />} /> */}
             <Route path='/admin' element={<ProtectedRoute component={AdminPanel}/>} />
           </Routes>

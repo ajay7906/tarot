@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Book, Star } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const TarotClassPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -10,7 +10,7 @@ const TarotClassPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-700 to-indigo-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-700 to-indigo-900 bg-gray-100 text-white p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
@@ -54,7 +54,7 @@ const TarotClassPage = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-yellow-500 text-purple-900 font-bold py-3 px-6 rounded-full"
             >
-              Start Your Free Demo
+             <Link to='/class'> Start Your Free Demo</Link>
             </motion.button>
           </div>
         </section>
@@ -71,7 +71,7 @@ const TarotClassPage = () => {
                 className="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg text-center"
               >
                 <h3 className="text-2xl font-semibold mb-4">{level}</h3>
-                <p className="text-3xl font-bold mb-4">${(index + 1) * 99}</p>
+                <p className="text-3xl font-bold mb-4">₹{(index + 1) * 99}</p>
                 <ul className="text-left mb-6">
                   <li className="mb-2">✔️ {4 + index * 2} weeks of lessons</li>
                   <li className="mb-2">✔️ {1 + index} 1-on-1 sessions</li>

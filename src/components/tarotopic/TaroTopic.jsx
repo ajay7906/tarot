@@ -17,12 +17,12 @@ const TarotTopics = () => {
     { title: "Love & Relationships", description: "Gain insights into your romantic life and personal connections.", icon: "❤️" },
     { title: "Career & Finance", description: "Navigate your professional path and financial decisions.", icon: "💼" },
     { title: "Personal Growth", description: "Discover opportunities for self-improvement and spiritual development.", icon: "🌱" },
-    { title: "Life Path", description: "Understand your life's purpose and future directions.", icon: "🛤️" },
+  
     { title: "Healing", description: "Find guidance for physical, emotional, and spiritual healing processes.", icon: "🌟" }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-purple-800 mb-12">Explore Tarot Topics</h2>
         <div className="flex flex-wrap justify-center">

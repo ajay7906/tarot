@@ -9,6 +9,7 @@ import AnimatedFooter from "../components/footer/Footer";
 import TarotLandingPage from "../components/landing/LandingPage";
 import NavBar from "../components/navbar/Navigation";
 import Pricing from "../components/pricing/Pricing";
+import SessionExperience from "../components/session/SessionExperience";
 import TarotTopics from "../components/tarotopic/TaroTopic";
 import Testimonials from "../components/testemonial/Testemonial";
 
@@ -25,7 +26,8 @@ const Home = ()=>{
      <TarotTopics/>
      <AchievementsComponent/>
      <AnimatedFAQComponent/>
-     <Blog/>
+     {/* <Blog/> */}
+     <SessionExperience/>
      <Contact/>
     
      </>
