@@ -618,7 +618,7 @@ const Pricing = () => {
         "Do not need in-session intervention",
         "Need an improvement action plan"
       ],
-      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotwithlavanya@gmail.com"
+      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com"
     },
     {
       title: "Video Consultation",
@@ -644,7 +644,7 @@ const Pricing = () => {
         "Expect a detailed follow-up action plan",
         "Desire WhatsApp support for one week"
       ],
-      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotwithlavanya@gmail.com."
+      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     }
   ];
 
@@ -661,7 +661,7 @@ const Pricing = () => {
         "Do not need in-session intervention",
         "Need an improvement action plan"
       ],
-      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotwithlavanya@gmail.com"
+      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com"
     },
     {
       title: "Video Consultation",
@@ -687,7 +687,7 @@ const Pricing = () => {
         "Expect a detailed follow-up action plan",
         "Desire WhatsApp support for one week"
       ],
-      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotwithlavanya@gmail.com."
+      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     }
   ];
 
