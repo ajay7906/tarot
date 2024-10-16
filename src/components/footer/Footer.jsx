@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReddit, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { FaReddit, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 const AnimatedFooter = () => {
   const socialIcons = [
-    { Icon: FaReddit, href: '#' },
-    { Icon: FaInstagram, href: '#' },
+    { Icon: FaFacebook, href: 'https://www.facebook.com/share/7KzUh9k5HSevwxHs/' },
+    { Icon: FaInstagram, href: 'https://www.instagram.com/tarotbydeepaa/profilecard/?igsh=NWlxY3A5cW42YTM3' },
     { Icon: FaYoutube, href: '#' },
     { Icon: FaLinkedin, href: '#' },
   ];
@@ -52,18 +52,18 @@ const AnimatedFooter = () => {
               whileHover={{ scale: 1.05 }}
               className="mb-2"
             >
-              P : +91 9773827289
+              P :+91 95495 59778
             </motion.p>
             <motion.p
               whileHover={{ scale: 1.05 }}
               className="mb-2"
             >
-              E : karladiscovers@gmail.com
+              E : tarotbydeepa@gmail.com
             </motion.p>
             <motion.p
               whileHover={{ scale: 1.05 }}
             >
-              E: founder@tarotwithlavanya.com
+            
             </motion.p>
           </motion.div>
 
@@ -73,7 +73,7 @@ const AnimatedFooter = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-xl font-semibold mb-4">Consult India's #1 tarot reader</h3>
-            <p className="mb-4">Life can be difficult, often confusing. Let Lavanya help find an actionable plan that is realistic and achievable.</p>
+            <p className="mb-4">Life can be difficult, often confusing. Let Deepa help find an actionable plan that is realistic and achievable.</p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -97,7 +97,7 @@ const AnimatedFooter = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            Copyright © 2024 Tarot With Lavanya
+            Copyright © 2024 Tarot With Deepa
           </motion.p>
           <motion.div
             className="flex space-x-4 mt-4 md:mt-0"
