@@ -22,6 +22,9 @@ import HealingPage from './pages/topics/healing/Healing'
 import Love from './pages/topics/love/Love'
 import Personal from './pages/topics/personal/Personal'
 import Guidance from './pages/guidance/Guidance'
+import TermsAndConditions from './pages/policy/TermsAndCondition'
+import PrivacyPolicy from './pages/policy/PrivacyPolicy'
+import RefundPolicy from './pages/policy/RefundPolicy'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -46,6 +49,10 @@ function App() {
             <Route path='topic/relationship' element={<Love/>} />
             <Route path='topic/personal' element={<Personal/>} />
             <Route path='/guidance' element={<Guidance/>} />
+            <Route path='/terms' element={<TermsAndConditions/>} />
+            <Route path='/privacy' element={<PrivacyPolicy/>} />
+          
+            <Route path='/refund' element={<RefundPolicy/>} />
             {/* <ProtectedRoute path='/admin' component={<AdminPanel />} /> */}
             <Route path='/admin' element={<ProtectedRoute component={AdminPanel}/>} />
           </Routes>

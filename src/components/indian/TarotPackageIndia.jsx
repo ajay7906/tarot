@@ -38,7 +38,7 @@ const PackageCard = ({ title, price, duration, originalPrice, features, buttonTe
     <button className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition duration-300 font-semibold">
       {buttonText}
     </button>
-    <p className="text-xs text-gray-500 mt-2">Indian Visitors are requested to Book via Indian Pricing</p>
+    <p className="text-xs text-gray-500 mt-2">International Visitors are requested to Book via International Pricing</p>
   </motion.div>
 );
 

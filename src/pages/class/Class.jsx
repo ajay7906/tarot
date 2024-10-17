@@ -360,7 +360,7 @@ const TarotClasses = () => {
             >
               <h3 className="text-xl font-bold mb-4 text-purple-700">{plan.title}</h3>
               <p className="text-gray-600 mb-6">{plan.description}</p>
-              <h4 className="text-3xl font-semibold text-purple-500">${plan.price / 100}</h4>
+              <h4 className="text-3xl font-semibold text-purple-500">₹{plan.price / 100}</h4>
               <ul className="list-disc ml-6 mt-4 mb-6 text-gray-700">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="mb-2">{feature}</li>

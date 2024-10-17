@@ -631,7 +631,7 @@ const Pricing = () => {
         "Need a combination of clarity and energy support",
         "Desire real-time interventions during the session"
       ],
-      sessionDetails: "For slot details, reach out to us via WhatsApp or email."
+      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     },
     {
       title: "Extended Session (45-Min)",
@@ -644,7 +644,7 @@ const Pricing = () => {
         "Expect a detailed follow-up action plan",
         "Desire WhatsApp support for one week"
       ],
-      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com."
+      sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     }
   ];
 
@@ -674,7 +674,7 @@ const Pricing = () => {
         "Need a combination of clarity and energy support",
         "Desire real-time interventions during the session"
       ],
-      sessionDetails: "For slot details, reach out to us via WhatsApp or email."
+      sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com.l."
     },
     {
       title: "Extended Session (45-Min)",

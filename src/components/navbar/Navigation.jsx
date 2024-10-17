@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/useContext';
 import { ChevronDown } from 'lucide-react';
-
+import Icons from '../../assets/icons.png';
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
@@ -43,7 +43,16 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-2xl font-bold text-teal-600">Tarot With Deepa</span>
+              {/* <span className="text-2xl font-bold text-teal-600">Tarot With Deepa</span> */}
+              <Link to="/" className='flex items-center'>
+                <img
+                  src={Icons}
+                  alt="Tarot Icon"
+                  className="h-12 w-auto sm:h-10 md:h-12"
+                />
+                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600">Tarot</span>
+              </Link>
+             
             </div>
           </div>
           <div className="hidden md:block">

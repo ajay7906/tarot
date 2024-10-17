@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from 'framer-motion';
 import LoveImages from '../../../assets/Career.webp'
+import { Link } from "react-router-dom";
 const CareerAndFinance = () => {
   return (
    
@@ -15,17 +16,14 @@ const CareerAndFinance = () => {
             <span className="text-green-600">Tarot</span>
           </h1>
           <p className="text-gray-600 mb-8">
-            Hi, I'm Tarot Deepa, one of the best tarot card readers in 
-            India. I specialize in helping you gain insight into your past, 
-            present, and future, offering guidance to create the life you 
-            want and deserve.
+          Discover your professional destiny with India’s best tarot card reader. I will help you build an actionable plan to explore professional opportunities, boost interview success rate, and evaluate business ideas through career tarot reading
           </p>
           <div className="flex space-x-4">
             <button className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">
               Book a Session
             </button>
             <button className="bg-white text-teal-600 px-6 py-2 rounded-full border border-teal-600 hover:bg-teal-50 transition duration-300">
-              Explore Services
+            <Link to='/pricing/india'>Explore Services</Link>
             </button>
           </div>
         </div>

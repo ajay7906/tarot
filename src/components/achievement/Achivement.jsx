@@ -19,7 +19,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">India's Best Tarot Blog by FeedSpot</h3>
-            <p className="text-gray-300">tarotwithlavanya.com has been ranked among the top-20 tarot related platforms by Feedspot</p>
+            <p className="text-gray-300">tarotwithdeepa.com has been ranked among the top-20 tarot related platforms by Feedspot</p>
           </motion.div>
           
           <motion.div 
@@ -27,7 +27,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">5-Star Average Rating</h3>
-            <p className="text-gray-300">Lavanya has garnered over 1000 5-Star reviews and is ranked among the best tarot card readers in India.</p>
+            <p className="text-gray-300">Deepa has garnered over 1000 5-Star reviews and is ranked among the best tarot card readers in India.</p>
           </motion.div>
           
           <motion.div 
@@ -35,7 +35,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">#1 Tarot Reader on Medium</h3>
-            <p className="text-gray-300">Lavanya has been ranked the best tarot reader by Medium's writer Karla. The comparison was between 137 tarot readers in India.</p>
+            <p className="text-gray-300">Deepa has been ranked the best tarot reader by Medium's writer Karla. The comparison was between 137 tarot readers in India.</p>
           </motion.div>
           
           <motion.div 
@@ -43,7 +43,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">90%+ Return Rate</h3>
-            <p className="text-gray-300">Tarot With Lavanya also boasts an amazing return rate among its clientele. This signifies the value and quality of the services provided.</p>
+            <p className="text-gray-300">Tarot With Deepa also boasts an amazing return rate among its clientele. This signifies the value and quality of the services provided.</p>
           </motion.div>
         </div>
       </motion.div>
