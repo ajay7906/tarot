@@ -30,15 +30,15 @@ const FAQMONEY = () => {
   const faqData = [
     {
       question: "What is the refund policy?",
-      answer: "Our refund policy allows for full refunds within 30 days of purchase."
+      answer: "Our refund policy does not allow for full refunds after purchase. However, we do offer partial refunds depending on the circumstances, such as if the session was canceled in advance."
     },
     {
       question: "What is the cancellation policy?",
-      answer: "Cancellations are accepted up to 24 hours before the scheduled appointment."
+      answer: "Cancellations are not accepted within 24 hours of the scheduled appointment. Please make sure to cancel or reschedule at least a day before your session."
     },
     {
       question: "How many times can I reschedule my session?",
-      answer: "You can reschedule your session up to 3 times without any additional charges."
+      answer: "You can reschedule your session up to 3 times without any additional charges. Beyond that, a rescheduling fee will be applied for subsequent changes."
     },
     {
       question: "What kind of topics can I ask?",
@@ -46,7 +46,7 @@ const FAQMONEY = () => {
     },
     {
       question: "How can tarot readings help me?",
-      answer: "Tarot readings can provide insight, clarity, and guidance on various aspects of your life."
+      answer: "Tarot readings can provide insight, clarity, and guidance on various aspects of your life. They help you reflect on your current path and make informed decisions moving forward."
     },
     {
       question: "What should I expect during a tarot reading?",
@@ -68,3 +68,29 @@ const FAQMONEY = () => {
 };
 
 export default FAQMONEY;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
