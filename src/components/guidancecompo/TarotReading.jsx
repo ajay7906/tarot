@@ -509,6 +509,490 @@
 
 
 
+// import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
+
+// const YesNoTarot = () => {
+//   const [selectedCard, setSelectedCard] = useState(null);
+//   const [isFlipped, setIsFlipped] = useState(false);
+//   const [loading, setLoading] = useState(false);
+
+//   const fetchRandomCard = async () => {
+//     setLoading(true);
+//     try {
+//       const response = await fetch('https://tarotapi.dev/api/v1/cards/random');
+//       const data = await response.json();
+//       setSelectedCard(data.cards[0]);
+//       setLoading(false);
+//     } catch (error) {
+//       console.error('Error fetching card:', error);
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleCardClick = () => {
+//     if (!selectedCard) {
+//       fetchRandomCard();
+//     } else {
+//       setIsFlipped(!isFlipped);
+//     }
+//   };
+
+//   const getYesNoAnswer = () => {
+//     if (!selectedCard) return '';
+//     const upright = Math.random() < 0.5;
+//     const meaning = upright ? selectedCard.meaning_up : selectedCard.meaning_rev;
+//     if (meaning.toLowerCase().includes('yes')) return 'Yes';
+//     if (meaning.toLowerCase().includes('no')) return 'No';
+//     return 'Maybe';
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-purple-600 to-indigo-900 text-white p-4">
+//       <div className="max-w-2xl mx-auto">
+//         <h1 className="text-4xl font-bold text-center mb-6">Get Your Yes/No Tarot Answer</h1>
+//         <p className="text-lg text-center mb-8">
+//           Welcome to our Free Yes/No Tarot reading. This tool is designed to offer you a brief and straightforward answer to your question. Please take a moment to think carefully about your question before drawing your card.
+//         </p>
+//         <div className="flex justify-center mb-8">
+//           <motion.div
+//             className="w-64 h-96 bg-purple-800 rounded-lg shadow-xl cursor-pointer perspective"
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             onClick={handleCardClick}
+//           >
+//             <motion.div
+//               className="w-full h-full relative"
+//               animate={{ rotateY: isFlipped ? 180 : 0 }}
+//               transition={{ duration: 0.6 }}
+//               style={{ transformStyle: 'preserve-3d' }}
+//             >
+//               <div className="absolute w-full h-full backface-hidden">
+//                 <div className="w-full h-full flex items-center justify-center bg-tarot-back bg-cover rounded-lg">
+//                   <span className="text-2xl font-bold">
+//                     {loading ? 'Drawing...' : selectedCard ? 'Flip Card' : 'Draw a Card'}
+//                   </span>
+//                 </div>
+//               </div>
+//               <div className="absolute w-full h-full backface-hidden rotate-y-180">
+//                 {selectedCard && (
+//                   <div className="w-full h-full bg-white text-black p-4 rounded-lg overflow-y-auto flex flex-col items-center">
+//                     <h2 className="text-xl font-bold mb-2">{selectedCard.name}</h2>
+//                     <img 
+//                       src={`https://tarotapi.dev/images/cards/${selectedCard.name_short}.jpg`} 
+//                       alt={selectedCard.name} 
+//                       className="w-32 h-48 object-contain mb-2"
+//                     />
+//                     <p className="mb-2"><strong>Answer:</strong> {getYesNoAnswer()}</p>
+//                     <p className="mb-2"><strong>Description:</strong> {selectedCard.desc}</p>
+//                     <p><strong>Meaning:</strong> {selectedCard.meaning_up}</p>
+//                   </div>
+//                 )}
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+//         {selectedCard && (
+//           <motion.button
+//             className="block mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             onClick={() => {
+//               setSelectedCard(null);
+//               setIsFlipped(false);
+//             }}
+//           >
+//             Draw Another Card
+//           </motion.button>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default YesNoTarot;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
+
+// const YesNoTarot = () => {
+//   const [selectedCard, setSelectedCard] = useState(null);
+//   const [isFlipped, setIsFlipped] = useState(false);
+//   const [loading, setLoading] = useState(false);
+
+//   const fetchRandomCard = async () => {
+//     setLoading(true);
+//     try {
+//       const response = await fetch('https://tarotapi.dev/api/v1/cards/random');
+//       const data = await response.json();
+//       setSelectedCard(data.cards[0]);
+//       setLoading(false);
+//     } catch (error) {
+//       console.error('Error fetching card:', error);
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleCardClick = () => {
+//     if (!selectedCard) {
+//       fetchRandomCard();
+//     } else {
+//       setIsFlipped(!isFlipped);
+//     }
+//   };
+
+//   const getYesNoAnswer = () => {
+//     if (!selectedCard) return '';
+//     const upright = Math.random() < 0.5;
+//     const meaning = upright ? selectedCard.meaning_up : selectedCard.meaning_rev;
+//     if (meaning.toLowerCase().includes('yes')) return 'Yes';
+//     if (meaning.toLowerCase().includes('no')) return 'No';
+//     return 'Maybe';
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-purple-600 to-indigo-900 text-white p-4">
+//       <div className="max-w-4xl mx-auto">
+//         <h1 className="text-4xl font-bold text-center mb-6">Get Your Yes/No Tarot Answer</h1>
+//         <p className="text-lg text-center mb-8">
+//           Welcome to our Free Yes/No Tarot reading. This tool is designed to offer you a brief and straightforward answer to your question. Please take a moment to think carefully about your question before drawing your card.
+//         </p>
+//         <div className="flex justify-center mb-8">
+//           <motion.div
+//             className="w-72 h-[32rem] bg-purple-800 rounded-lg shadow-xl cursor-pointer"
+//             whileHover={{ scale: 1.02 }}
+//             whileTap={{ scale: 0.98 }}
+//             onClick={handleCardClick}
+//             style={{ 
+//               perspective: '1000px',
+//               transformStyle: 'preserve-3d'
+//             }}
+//           >
+//             <motion.div
+//               className="w-full h-full relative"
+//               animate={{ rotateY: isFlipped ? 180 : 0 }}
+//               transition={{ duration: 0.6 }}
+//               style={{ transformStyle: 'preserve-3d' }}
+//             >
+//               {/* Card Back */}
+//               <div 
+//                 className="absolute w-full h-full backface-hidden bg-gradient-to-br from-purple-900 to-indigo-800 rounded-lg border-2 border-purple-300/20"
+//                 style={{ backfaceVisibility: 'hidden' }}
+//               >
+//                 <div className="w-full h-full flex items-center justify-center">
+//                   <span className="text-2xl font-bold text-white/90 pointer-events-none">
+//                     {loading ? 'Drawing...' : selectedCard ? 'Flip Card' : 'Draw a Card'}
+//                   </span>
+//                 </div>
+//               </div>
+              
+//               {/* Card Front */}
+//               <div 
+//                 className="absolute w-full h-full backface-hidden rounded-lg bg-white/95 text-gray-800"
+//                 style={{ 
+//                   backfaceVisibility: 'hidden',
+//                   transform: 'rotateY(180deg)'
+//                 }}
+//               >
+//                 {selectedCard && (
+//                   <div className="w-full h-full p-6 flex flex-col items-center">
+//                     <h2 className="text-2xl font-bold mb-4">{selectedCard.name}</h2>
+//                     <img 
+//                       src="/api/placeholder/240/360"
+//                       alt={selectedCard.name}
+//                       className="w-60 h-80 object-cover rounded-lg mb-4 shadow-md"
+//                     />
+//                     <div className="space-y-2 text-center">
+//                       <p className="text-xl font-semibold">
+//                         <span className="text-purple-600">Answer:</span> {getYesNoAnswer()}
+//                       </p>
+//                       <p className="text-sm line-clamp-3">
+//                         <span className="font-semibold">Meaning:</span> {selectedCard.meaning_up}
+//                       </p>
+//                     </div>
+//                   </div>
+//                 )}
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+        
+//         {selectedCard && (
+//           <motion.button
+//             className="block mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg"
+//             whileHover={{ scale: 1.02 }}
+//             whileTap={{ scale: 0.98 }}
+//             onClick={() => {
+//               setSelectedCard(null);
+//               setIsFlipped(false);
+//             }}
+//           >
+//             Draw Another Card
+//           </motion.button>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default YesNoTarot;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
+
+// const YesNoTarot = () => {
+//   const [selectedCard, setSelectedCard] = useState(null);
+//   const [isFlipped, setIsFlipped] = useState(false);
+//   const [loading, setLoading] = useState(false);
+
+//   const fetchRandomCard = async () => {
+//     setLoading(true);
+//     try {
+//       const response = await fetch('https://tarotapi.dev/api/v1/cards/random');
+//       const data = await response.json();
+//       setSelectedCard(data.cards[0]);
+//       setLoading(false);
+//     } catch (error) {
+//       console.error('Error fetching card:', error);
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleCardClick = () => {
+//     if (!selectedCard) {
+//       fetchRandomCard();
+//     } else {
+//       setIsFlipped(!isFlipped);
+//     }
+//   };
+
+//   const getYesNoAnswer = () => {
+//     if (!selectedCard) return '';
+//     const upright = Math.random() < 0.5;
+//     const meaning = upright ? selectedCard.meaning_up : selectedCard.meaning_rev;
+//     if (meaning.toLowerCase().includes('yes')) return 'Yes';
+//     if (meaning.toLowerCase().includes('no')) return 'No';
+//     return 'Maybe';
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-purple-600 to-indigo-900 text-white p-4">
+//       <div className="max-w-4xl mx-auto">
+//         <h1 className="text-4xl font-bold text-center mb-6">Get Your Yes/No Tarot Answer</h1>
+//         <p className="text-lg text-center mb-8">
+//           Welcome to our Free Yes/No Tarot reading. This tool is designed to offer you a brief and straightforward answer to your question. Please take a moment to think carefully about your question before drawing your card.
+//         </p>
+//         <div className="flex justify-center mb-8">
+//           <motion.div
+//             className="w-[36rem] h-[32rem] bg-purple-800 rounded-lg shadow-xl cursor-pointer"
+//             whileHover={{ scale: 1.02 }}
+//             whileTap={{ scale: 0.98 }}
+//             onClick={handleCardClick}
+//             style={{ 
+//               perspective: '1000px',
+//               transformStyle: 'preserve-3d'
+//             }}
+//           >
+//             <motion.div
+//               className="w-full h-full relative"
+//               animate={{ rotateY: isFlipped ? 180 : 0 }}
+//               transition={{ duration: 0.6 }}
+//               style={{ transformStyle: 'preserve-3d' }}
+//             >
+//               {/* Card Back */}
+//               <div 
+//                 className="absolute w-full h-full backface-hidden bg-gradient-to-br from-purple-900 to-indigo-800 rounded-lg border-2 border-purple-300/20"
+//                 style={{ backfaceVisibility: 'hidden' }}
+//               >
+//                 <div className="w-full h-full flex items-center justify-center">
+//                   <span className="text-2xl font-bold text-white/90 pointer-events-none">
+//                     {loading ? 'Drawing...' : selectedCard ? 'Flip Card' : 'Draw a Card'}
+//                   </span>
+//                 </div>
+//               </div>
+              
+//               {/* Card Front */}
+//               <div 
+//                 className="absolute w-full h-full backface-hidden rounded-lg bg-white/95 text-gray-800"
+//                 style={{ 
+//                   backfaceVisibility: 'hidden',
+//                   transform: 'rotateY(180deg)'
+//                 }}
+//               >
+//                 {selectedCard && (
+//                   <div className="w-full h-full p-6 flex gap-6">
+//                     {/* Left side - Image */}
+//                     <div className="flex flex-col items-center w-80">
+//                       <h2 className="text-2xl font-bold mb-4">{selectedCard.name}</h2>
+//                       <img 
+//                         src="/api/placeholder/240/360"
+//                         alt={selectedCard.name}
+//                         className="w-60 h-80 object-cover rounded-lg shadow-md"
+//                       />
+//                     </div>
+
+//                     {/* Right side - Content */}
+//                     <div className="flex-1 overflow-y-auto pr-4 space-y-4">
+//                       <div className="bg-purple-100 p-4 rounded-lg">
+//                         <p className="text-2xl font-bold text-purple-800 mb-1">
+//                           Answer: <span className="text-indigo-600">{getYesNoAnswer()}</span>
+//                         </p>
+//                       </div>
+
+//                       <div className="space-y-4">
+//                         <div>
+//                           <h3 className="text-lg font-semibold text-purple-800 mb-1">Description</h3>
+//                           <p className="text-sm leading-relaxed text-gray-700">
+//                             {selectedCard.desc}
+//                           </p>
+//                         </div>
+
+//                         <div>
+//                           <h3 className="text-lg font-semibold text-purple-800 mb-1">Upright Meaning</h3>
+//                           <p className="text-sm leading-relaxed text-gray-700">
+//                             {selectedCard.meaning_up}
+//                           </p>
+//                         </div>
+
+//                         <div>
+//                           <h3 className="text-lg font-semibold text-purple-800 mb-1">Reversed Meaning</h3>
+//                           <p className="text-sm leading-relaxed text-gray-700">
+//                             {selectedCard.meaning_rev}
+//                           </p>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 )}
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+        
+//         {selectedCard && (
+//           <motion.button
+//             className="block mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg"
+//             whileHover={{ scale: 1.02 }}
+//             whileTap={{ scale: 0.98 }}
+//             onClick={() => {
+//               setSelectedCard(null);
+//               setIsFlipped(false);
+//             }}
+//           >
+//             Draw Another Card
+//           </motion.button>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default YesNoTarot;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -549,17 +1033,19 @@ const YesNoTarot = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-600 to-indigo-900 text-white p-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-6">Get Your Yes/No Tarot Answer</h1>
         <p className="text-lg text-center mb-8">
           Welcome to our Free Yes/No Tarot reading. This tool is designed to offer you a brief and straightforward answer to your question. Please take a moment to think carefully about your question before drawing your card.
         </p>
         <div className="flex justify-center mb-8">
-          <motion.div
-            className="w-64 h-96 bg-purple-800 rounded-lg shadow-xl cursor-pointer perspective"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <div
+            className="w-[36rem] h-[32rem] bg-purple-800 rounded-lg shadow-xl cursor-pointer"
             onClick={handleCardClick}
+            style={{ 
+              perspective: '1000px',
+              transformStyle: 'preserve-3d'
+            }}
           >
             <motion.div
               className="w-full h-full relative"
@@ -567,36 +1053,81 @@ const YesNoTarot = () => {
               transition={{ duration: 0.6 }}
               style={{ transformStyle: 'preserve-3d' }}
             >
-              <div className="absolute w-full h-full backface-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-tarot-back bg-cover rounded-lg">
-                  <span className="text-2xl font-bold">
+              {/* Card Back */}
+              <div 
+                className="absolute w-full h-full backface-hidden bg-gradient-to-br from-purple-900 to-indigo-800 rounded-lg border-2 border-purple-300/20"
+                style={{ backfaceVisibility: 'hidden' }}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white/90 pointer-events-none">
                     {loading ? 'Drawing...' : selectedCard ? 'Flip Card' : 'Draw a Card'}
                   </span>
                 </div>
               </div>
-              <div className="absolute w-full h-full backface-hidden rotate-y-180">
+              
+              {/* Card Front */}
+              <div 
+                className="absolute w-full h-full backface-hidden rounded-lg bg-white/95 text-gray-800"
+                style={{ 
+                  backfaceVisibility: 'hidden',
+                  transform: 'rotateY(180deg)'
+                }}
+              >
                 {selectedCard && (
-                  <div className="w-full h-full bg-white text-black p-4 rounded-lg overflow-y-auto flex flex-col items-center">
-                    <h2 className="text-xl font-bold mb-2">{selectedCard.name}</h2>
-                    <img 
-                      src={`https://tarotapi.dev/images/cards/${selectedCard.name_short}.jpg`} 
-                      alt={selectedCard.name} 
-                      className="w-32 h-48 object-contain mb-2"
-                    />
-                    <p className="mb-2"><strong>Answer:</strong> {getYesNoAnswer()}</p>
-                    <p className="mb-2"><strong>Description:</strong> {selectedCard.desc}</p>
-                    <p><strong>Meaning:</strong> {selectedCard.meaning_up}</p>
+                  <div className="w-full h-full p-6 flex gap-6">
+                    {/* Left side - Image */}
+                    <div className="flex flex-col items-center w-80">
+                      <h2 className="text-2xl font-bold mb-4">{selectedCard.name}</h2>
+                      <img 
+                        src="/api/placeholder/240/360"
+                        alt={selectedCard.name}
+                        className="w-60 h-80 object-cover rounded-lg shadow-md"
+                      />
+                    </div>
+
+                    {/* Right side - Content */}
+                    <div className="flex-1 overflow-y-auto pr-4 space-y-4">
+                      <div className="bg-purple-100 p-4 rounded-lg">
+                        <p className="text-2xl font-bold text-purple-800 mb-1">
+                          Answer: <span className="text-indigo-600">{getYesNoAnswer()}</span>
+                        </p>
+                      </div>
+
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-purple-800 mb-1">Description</h3>
+                          <p className="text-sm leading-relaxed text-gray-700">
+                            {selectedCard.desc}
+                          </p>
+                        </div>
+
+                        <div>
+                          <h3 className="text-lg font-semibold text-purple-800 mb-1">Upright Meaning</h3>
+                          <p className="text-sm leading-relaxed text-gray-700">
+                            {selectedCard.meaning_up}
+                          </p>
+                        </div>
+
+                        <div>
+                          <h3 className="text-lg font-semibold text-purple-800 mb-1">Reversed Meaning</h3>
+                          <p className="text-sm leading-relaxed text-gray-700">
+                            {selectedCard.meaning_rev}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
+        
         {selectedCard && (
           <motion.button
-            className="block mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="block mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => {
               setSelectedCard(null);
               setIsFlipped(false);
