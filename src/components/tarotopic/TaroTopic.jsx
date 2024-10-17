@@ -15,7 +15,7 @@ const TopicCard = ({ title, description, icon }) => (
 const TarotTopics = () => {
   const topics = [
     { title: "Love & Relationships", description: "Gain insights into your romantic life and personal connections.", icon: "❤️" },
-    { title: "Career & Finance", description: "Navigate your professional path and financial decisions.", icon: "💼" },
+    { title: "Career & Finance", description: "Navigate your professional path and financial decisions for success.", icon: "💼" },
     { title: "Personal Growth", description: "Discover opportunities for self-improvement and spiritual development.", icon: "🌱" },
   
     { title: "Healing", description: "Find guidance for physical, emotional, and spiritual healing processes.", icon: "🌟" }

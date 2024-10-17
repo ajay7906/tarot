@@ -615,6 +615,7 @@ const Pricing = () => {
       suitableFor: [
         "Need detailed clarity without energy exchange",
         "Do not struggle with focus and low energy",
+        "Need a combination of clarity and energy support",
         "Do not need in-session intervention",
         "Need an improvement action plan"
       ],

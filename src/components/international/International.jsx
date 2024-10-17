@@ -253,7 +253,8 @@ const TarotPackagesPageIndia = () => {
       features: [
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
-        "Need quick advice on current issues"
+        "Need quick advice on current issues",
+        "Need guidance on future challenges"
       ],
       buttonText: "Book a Session"
     },
@@ -294,7 +295,8 @@ const TarotPackagesPageIndia = () => {
       features: [
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
-        "Need quick advice on current issues"
+        "Need quick advice on current issues",
+        "Need guidance on future challenges"
       ],
       buttonText: "Book a Session"
     },
@@ -346,7 +348,7 @@ const TarotPackagesPageIndia = () => {
         <div className="bg-white bg-opacity-50 p-8 rounded-lg max-w-3xl w-full">
           <h1 className="text-4xl md:text-5xl font-playfair font-semibold mb-4">Explore Online Tarot Reading Packages</h1>
           <p className="text-lg mb-4 text-gray-600">For International Clients only</p>
-          <p className="mb-6 text-gray-700">First of all, thank you for showing interest in tarot with lavanya!</p>
+          <p className="mb-6 text-gray-700">First of all, thank you for showing interest in tarot with Deepa!</p>
           <p className="mb-8 text-gray-700">Secondly, please be assured that all packages have been curated carefully for the best tarot experience at probably the most affordable cost among top-rated tarot card readers in India.</p>
           <div className="flex justify-center space-x-4">
             <motion.button 

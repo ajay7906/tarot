@@ -50,7 +50,7 @@ const NavBar = () => {
                   alt="Tarot Icon"
                   className="h-12 w-auto sm:h-10 md:h-12"
                 />
-                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600">Tarot</span>
+                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600">Tarot With Deepa</span>
               </Link>
              
             </div>
@@ -146,7 +146,7 @@ const NavBar = () => {
                   Login
                 </Link>
               )}
-               <Link to='/guidance' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-base md:text-lg font-medium'>Guidance</Link>
+               {/* <Link to='/guidance' className='text-gray-600 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-base md:text-lg font-medium'>Guidance</Link> */}
             </div>
           </div>
           <div className="md:hidden">
@@ -282,12 +282,12 @@ const NavBar = () => {
                   Login
                 </Link>
               )}
-               <Link
+               {/* <Link
                 to='/guidance'
                 className="text-gray-600 hover:bg-teal-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Guidance
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
         )}
