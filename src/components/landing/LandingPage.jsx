@@ -453,13 +453,13 @@ const TarotLandingPage = () => {
               }}
             >
               <video
-                className="w-full h-full object-cover rounded-lg shadow-lg"
+                className="w-full h-full object-cover rounded-lg "
                 autoPlay
                 loop
                 muted
                 playsInline
               >
-                <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Mystical-tarot-cards-animation-_-Tarot-Card-_-Animation-_-Motion-Graphics-_-2024.mp4" type="video/mp4" />
+                <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </motion.div>
