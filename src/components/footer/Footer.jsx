@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 // import React from 'react';
 // import { motion } from 'framer-motion';
 // import { FaReddit, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa';
@@ -12,9 +22,9 @@
 
 //   const footerLinks = [
 //     { text: 'Contact Us', href: '#' },
-//     { text: 'Privacy Policy', href: '#' },
-//     { text: 'Terms & Services', href: '#' },
-//     { text: 'Refund Policy', href: '#' },
+//     { text: 'Privacy Policy', href: '/privacy' },
+//     { text: 'Terms & Services', href: '/terms' },
+//     { text: 'Refund Policy', href: '/refund' },
 //   ];
 
 //   return (
@@ -52,18 +62,20 @@
 //               whileHover={{ scale: 1.05 }}
 //               className="mb-2"
 //             >
-//               P :+91 95495 59778
+//               P: +91 95495 59778
 //             </motion.p>
 //             <motion.p
 //               whileHover={{ scale: 1.05 }}
 //               className="mb-2"
 //             >
-//               E : tarotbydeepa@gmail.com
+//               E: tarotbydeepa@gmail.com
 //             </motion.p>
 //             <motion.p
 //               whileHover={{ scale: 1.05 }}
 //             >
-            
+//               Address: 87 Himmat Nagar, Tonk Road,<br />
+//               Jaipur, Gandhi Nagar,<br />
+//               Rajasthan, 302015
 //             </motion.p>
 //           </motion.div>
 
@@ -138,7 +150,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaReddit, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
@@ -156,6 +185,8 @@ const AnimatedFooter = () => {
     { text: 'Terms & Services', href: '/terms' },
     { text: 'Refund Policy', href: '/refund' },
   ];
+
+  const MotionLink = motion(Link);
 
   return (
     <footer className="bg-green-900 text-white py-8">
@@ -248,15 +279,15 @@ const AnimatedFooter = () => {
             transition={{ duration: 0.5, delay: 1 }}
           >
             {footerLinks.map((link, index) => (
-              <motion.a
+              <MotionLink
                 key={index}
-                href={link.href}
+                to={link.href}
                 className="hover:text-teal-300 transition duration-300"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {link.text}
-              </motion.a>
+              </MotionLink>
             ))}
           </motion.div>
         </div>
@@ -266,11 +297,3 @@ const AnimatedFooter = () => {
 };
 
 export default AnimatedFooter;
-
-
-
-
-
-
-
-
