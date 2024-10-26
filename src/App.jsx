@@ -25,12 +25,24 @@ import Guidance from './pages/guidance/Guidance'
 import TermsAndConditions from './pages/policy/TermsAndCondition'
 import PrivacyPolicy from './pages/policy/PrivacyPolicy'
 import RefundPolicy from './pages/policy/RefundPolicy'
+import { Toaster } from 'react-hot-toast'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <AuthProvider>
       <BrowserRouter>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          // Default options for all toasts
+          style: {
+            borderRadius: '8px',
+            background: '#333',
+            color: '#fff',
+          },
+        }}
+      />
 
       <NavBar/>
           <Routes>

@@ -13,7 +13,7 @@
 //   const [username, setUsername] = useState('');
 //   const [password, setPassword] = useState('');
 //   const [email, setEmail] = useState('');
-//   const [error, setError] = useState('');
+//   const [message, setMessage] = useState('');
 //   const [loading, setLoading] = useState(false);
 //   const navigate = useNavigate();
 //   const location = useLocation();
@@ -27,13 +27,13 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     handleLogout(); // Clear any existing auth state
-//     setError('');
+//     setMessage('');
 //     setLoading(true);
 
 //     try {
 //       if (isLogin) {
-//         // Call login API   https://tarotbydeepa.com/   http://localhost:5000    http://88.222.213.80:5000
-//         const response = await axios.post('  http://88.222.213.80:5000/api/signin', { email, password });
+//         // Call login API
+//         const response = await axios.post('http://88.222.213.80:5000/api/signin', { email, password });
 //         console.log('Login response:', response.data);
 
 //         const token = response.data.token;
@@ -41,27 +41,31 @@
 //         if (token) {
 //           localStorage.setItem('authToken', token);
 //           console.log('Token stored in localStorage:', token);
-//           login( token, email);
+//           login(token, email);
 //           const { from } = location.state || { from: { pathname: '/' } };
 //           navigate(from.pathname, { replace: true });
 //         } else {
-//           setError('No token received from server');
+//           setMessage('No token received from server');
 //         }
 //       } else {
 //         // Call signup API
-//         const response = await axios.post('  http://88.222.213.80:5000/api/signup', { name: username, email, password });
+//         const response = await axios.post('http://88.222.213.80:5000/api/signup', { name: username, email, password });
 //         console.log('Signup response:', response.data);
-
-//         if (response.status === 200) {
-//           alert('Sign up successful! Please log in.');
+//         console.log(response);
+        
+//         if (response.status === 201) {
 //           setIsLogin(true); // Switch to login form after successful signup
+//           setUsername('');
+//           setPassword('');
+//           // Keep the email filled in for convenience
+//           setMessage('Sign up successful! Please log in with your new account.');
 //         } else {
-//           setError(response.data.message || 'Failed to sign up');
+//           setMessage(response.data.message || 'Failed to sign up');
 //         }
 //       }
 //     } catch (err) {
 //       console.error('API call error:', err.response ? err.response.data : err.message);
-//       setError(err.response ? err.response.data.message : 'Something went wrong. Please try again later.');
+//       setMessage(err.response ? err.response.data.message : 'Something went wrong. Please try again later.');
 //     } finally {
 //       setLoading(false);
 //     }
@@ -72,7 +76,7 @@
 //     setUsername('');
 //     setPassword('');
 //     setEmail('');
-//     setError('');
+//     setMessage('');
 //   };
 
 //   return (
@@ -93,9 +97,9 @@
 //           </h2>
 //         </motion.div>
 
-//         {error && (
-//           <div className="text-red-500 text-center font-bold mb-4">
-//             {error}
+//         {message && (
+//           <div className={`text-center font-bold mb-4 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
+//             {message}
 //           </div>
 //         )}
 
@@ -220,18 +224,46 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/useContext';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -245,11 +277,17 @@ const AuthForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleLogout(); // Clear any existing auth state
-    setMessage('');
     setLoading(true);
 
     try {
       if (isLogin) {
+        toast.success('Successfully logged in!', {
+          duration: 3000,
+          style: {
+            background: '#10B981',
+            color: '#fff',
+          },
+        });
         // Call login API
         const response = await axios.post('http://88.222.213.80:5000/api/signin', { email, password });
         console.log('Login response:', response.data);
@@ -260,29 +298,50 @@ const AuthForm = () => {
           localStorage.setItem('authToken', token);
           console.log('Token stored in localStorage:', token);
           login(token, email);
+          
+          toast.success('Successfully logged in!', {
+            duration: 3000,
+            style: {
+              background: '#10B981',
+              color: '#fff',
+            },
+          });
+          
           const { from } = location.state || { from: { pathname: '/' } };
           navigate(from.pathname, { replace: true });
         } else {
-          setMessage('No token received from server');
+          toast.error('No token received from server', {
+            duration: 3000,
+          });
         }
       } else {
         // Call signup API
         const response = await axios.post('http://88.222.213.80:5000/api/signup', { name: username, email, password });
         console.log('Signup response:', response.data);
-
-        if (response.status === 200) {
+        
+        if (response.status === 201) {
           setIsLogin(true); // Switch to login form after successful signup
           setUsername('');
           setPassword('');
           // Keep the email filled in for convenience
-          setMessage('Sign up successful! Please log in with your new account.');
+          toast.success('Account created successfully! Please log in.', {
+            duration: 3000,
+            style: {
+              background: '#10B981',
+              color: '#fff',
+            },
+          });
         } else {
-          setMessage(response.data.message || 'Failed to sign up');
+          toast.error(response.data.message || 'Failed to sign up', {
+            duration: 3000,
+          });
         }
       }
     } catch (err) {
       console.error('API call error:', err.response ? err.response.data : err.message);
-      setMessage(err.response ? err.response.data.message : 'Something went wrong. Please try again later.');
+      toast.error(err.response ? err.response.data.message : 'Something went wrong. Please try again later.', {
+        duration: 3000,
+      });
     } finally {
       setLoading(false);
     }
@@ -293,11 +352,11 @@ const AuthForm = () => {
     setUsername('');
     setPassword('');
     setEmail('');
-    setMessage('');
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-blue-500 p-4">
+    
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -313,12 +372,6 @@ const AuthForm = () => {
             {isLogin ? 'Sign in to your account' : 'Create a new account'}
           </h2>
         </motion.div>
-
-        {message && (
-          <div className={`text-center font-bold mb-4 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-            {message}
-          </div>
-        )}
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
