@@ -19,7 +19,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">India's Best Tarot Blog by FeedSpot</h3>
-            <p className="text-gray-300">tarotwithdeepa.com has been ranked among the top-20 tarot related platforms by Feedspot</p>
+            <p className="text-gray-300">tarotbydeepa.com has been ranked among the top-20 tarot related platforms by Feedspot</p>
           </motion.div>
           
           <motion.div 
@@ -43,7 +43,7 @@ const AchievementsComponent = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-blue-400">90%+ Return Rate</h3>
-            <p className="text-gray-300">Tarot With Deepa also boasts an amazing return rate among its clientele. This signifies the value and quality of the services provided.</p>
+            <p className="text-gray-300">Tarot By Deepa also boasts an amazing return rate among its clientele. This signifies the value and quality of the services provided.</p>
           </motion.div>
         </div>
       </motion.div>
