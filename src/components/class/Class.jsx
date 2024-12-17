@@ -59,6 +59,13 @@ const TarotClassPage = () => {
           </div>
         </section>
 
+
+
+
+
+
+{/*         
+
         <section>
           <h2 className="text-3xl font-semibold mb-6">Pricing</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -87,7 +94,28 @@ const TarotClassPage = () => {
               </motion.div>
             ))}
           </div>
-        </section>
+        </section> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </motion.div>
     </div>
   );

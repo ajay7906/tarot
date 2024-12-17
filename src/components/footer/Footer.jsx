@@ -73,8 +73,8 @@ const AnimatedFooter = () => {
               whileHover={{ scale: 1.05 }}
             >
               Address: 87 Himmat Nagar, Tonk Road,<br />
-              Jaipur, Gandhi Nagar,<br />
-              Rajasthan, 302015
+              Jaipur<br />
+              Rajasthan, 302018
             </motion.p>
           </motion.div>
 
