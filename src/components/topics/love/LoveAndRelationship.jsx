@@ -7,11 +7,11 @@ const LoveAndRelationship = () => {
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <h3 className="text-teal-600 text-lg mb-2">Tarot With Deepa</h3>
+          <h3 className="text-teal-600 text-lg mb-2">Tarot By Deepa</h3>
           <h1 className="text-4xl md:text-5xl font-serif mb-4">
             <span className="text-gray-800">Simplify Love &</span><br />
             <span className="text-gray-800">Relationship </span>
-            <span className="text-green-600">with</span><br />
+            <span className="text-green-600">By</span><br />
             <span className="text-green-600">Tarot</span>
           </h1>
           <p className="text-gray-600 mb-8">

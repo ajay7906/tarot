@@ -404,17 +404,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import TarotVedio from '../../assets/tarot.mp4';
 const TarotLandingPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <h3 className="text-teal-600 text-lg mb-2">Tarot With Deepa</h3>
+          <h3 className="text-teal-600 text-lg mb-2">Tarot By Deepa</h3>
           <h1 className="text-4xl md:text-5xl font-serif mb-4">
             <span className="text-gray-800">Discover the future</span><br />
             <span className="text-gray-800">you deserve </span>
-            <span className="text-teal-600">with</span><br />
+            <span className="text-teal-600">By</span><br />
             <span className="text-teal-600">Tarot</span>
           </h1>
           <p className="text-gray-600 mb-8">
@@ -459,7 +459,8 @@ const TarotLandingPage = () => {
                 muted
                 playsInline
               >
-                <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" />
+                {/* <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" /> */}
+                <source src={TarotVedio} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </motion.div>

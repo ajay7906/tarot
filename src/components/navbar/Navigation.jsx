@@ -50,7 +50,7 @@ const NavBar = () => {
                   alt="Tarot Icon"
                   className="h-12 w-auto sm:h-10 md:h-12"
                 />
-                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600">Tarot With Deepa</span>
+                 <span className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600">Tarot By Deepa</span>
               </Link>
              
             </div>
