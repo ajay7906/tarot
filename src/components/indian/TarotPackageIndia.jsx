@@ -45,10 +45,10 @@ const PackageCard = ({ title, price, duration, originalPrice, features, buttonTe
 const TarotPackagesPageIndia = () => {
   const videoPackages = [
     {
-      title: "Quickfire Tarot",
-      price: 40,
-      duration: 30,
-      originalPrice: 50,
+      title: "flexible reading me",
+      price: 50,
+      duration: 1,
+      originalPrice: 70,
       features: [
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
@@ -58,10 +58,10 @@ const TarotPackagesPageIndia = () => {
       buttonText: "Book a Session"
     },
     {
-      title: "Inneralign Tarot",
-      price: 60,
-      duration: 60,
-      originalPrice: 100,
+      title: "tarot spread me",
+      price: 25,
+      duration: 1,
+      originalPrice: 40,
       features: [
         "Need details on specific topics",
         "Need help identifying root-cause",
@@ -71,9 +71,9 @@ const TarotPackagesPageIndia = () => {
       buttonText: "Book a Session"
     },
     {
-      title: "Soulsync Tarot",
-      price: 80,
-      duration: 90,
+      title: "detailed reading",
+      price: 75,
+      duration: 1,
       originalPrice: 150,
       features: [
         "Need details on multiple topics",
