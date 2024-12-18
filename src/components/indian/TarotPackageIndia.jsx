@@ -56,6 +56,7 @@ const TarotPackagesPageIndia = () => {
       duration: 1,
       originalPrice: 70,
       features: [
+        "Starting 5 min is free",
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
         "Need quick advice on current issues",
@@ -82,6 +83,7 @@ const TarotPackagesPageIndia = () => {
       duration: 1,
       originalPrice: 150,
       features: [
+        "Starting 5 min is free",
         "Need details on multiple topics",
         "Need help resolving current challenges",
         "Need healing and anxiety management",
@@ -93,11 +95,12 @@ const TarotPackagesPageIndia = () => {
 
   const chatPackages = [
     {
-      title: "Flexible Reading",
-      price: 30,
-      duration: 30,
-      originalPrice: 40,
+      title: "flexible reading me",
+      price: 50,
+      duration: 1,
+      originalPrice: 70,
       features: [
+        "Starting 5 min is free",
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
         "Need quick advice on current issues",
@@ -106,10 +109,10 @@ const TarotPackagesPageIndia = () => {
       buttonText: "Book a Session"
     },
     {
-      title: "Tarot Spreads",
-      price: 45,
-      duration: 60,
-      originalPrice: 80,
+      title: "tarot spread me",
+      price: 25,
+      duration: 1,
+      originalPrice: 40,
       features: [
         "Need details on specific topics",
         "Need help identifying root-cause",
@@ -119,11 +122,12 @@ const TarotPackagesPageIndia = () => {
       buttonText: "Book a Session"
     },
     {
-      title: "Detailed Reading",
-      price: 60,
-      duration: 90,
-      originalPrice: 120,
+      title: "detailed reading",
+      price: 75,
+      duration: 1,
+      originalPrice: 150,
       features: [
+        "Starting 5 min is free",
         "Need details on multiple topics",
         "Need help resolving current challenges",
         "Need healing and anxiety management",
