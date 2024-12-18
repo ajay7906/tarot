@@ -26,6 +26,7 @@ import TermsAndConditions from './pages/policy/TermsAndCondition'
 import PrivacyPolicy from './pages/policy/PrivacyPolicy'
 import RefundPolicy from './pages/policy/RefundPolicy'
 import { Toaster } from 'react-hot-toast'
+import PaymentPage from './pages/paymetnt/PaymentPage'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -65,6 +66,7 @@ function App() {
             <Route path='/privacy' element={<PrivacyPolicy/>} />
           
             <Route path='/refund' element={<RefundPolicy/>} />
+            <Route path='/payment' element={<PaymentPage/>} />
             {/* <ProtectedRoute path='/admin' component={<AdminPanel />} /> */}
             <Route path='/admin' element={<ProtectedRoute component={AdminPanel}/>} />
           </Routes>

@@ -2,20 +2,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import International from '../../assets/intern.avif'
+import { useNavigate } from 'react-router-dom';
 
 const PackageCard = ({ title, price, duration, originalPrice, features, buttonText }) => (
+
   <motion.div 
     className="bg-white p-6 rounded-lg shadow-md"
     whileHover={{ scale: 1.05 }}
@@ -43,6 +36,19 @@ const PackageCard = ({ title, price, duration, originalPrice, features, buttonTe
 );
 
 const TarotPackagesPageIndia = () => {
+  const navigate = useNavigate();
+  const handleBooking = (data) => {
+    console.log(data);
+    
+    navigate('/payment',
+      {
+        state:{
+          data
+
+        }
+      }
+    )
+  }
   const videoPackages = [
     {
       title: "flexible reading me",
@@ -186,6 +192,7 @@ const TarotPackagesPageIndia = () => {
             {videoPackages.map((pkg, index) => (
               <motion.div
                 key={index}
+                onClick={()=>handleBooking(pkg)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
