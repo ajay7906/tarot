@@ -17,7 +17,7 @@ const Home = ()=>{
     return (
      <>
     
-     <TarotLandingPage/>
+     <TarotLandingPage/> 
      <Chatbot/>
      <ClientProfile/>
      <Pricing/>

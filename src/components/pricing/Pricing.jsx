@@ -569,6 +569,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => (
   <motion.div 
@@ -603,7 +604,20 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
 );
 
 const Pricing = () => {
-  const [isIndian, setIsIndian] = useState(true); // Toggle between Indian and International pricing
+  const [isIndian, setIsIndian] = useState(true); // Toggle between Indian and International pricing   
+  const navigate = useNavigate();
+  const handleBooking = (data) => {
+    console.log(data);
+    
+    navigate('/payment',
+      {
+        state:{
+          data        
+
+        }
+      }
+    )
+  }
 
   // Expanded Indian Pricing Plans (with more detailed content)
   const indianPlans = [
@@ -727,6 +741,7 @@ const Pricing = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               className="w-full md:w-1/2 lg:w-1/3"
+              onClick={()=>handleBooking(plan)}
             >
               <PricingCard {...plan} />
             </motion.div>

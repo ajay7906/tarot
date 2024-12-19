@@ -424,8 +424,9 @@ const TarotLandingPage = () => {
             want and deserve.
           </p>
           <div className="flex space-x-4">
-            <button className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">
-              Book a Session
+            <button className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300"> 
+              <Link to='pricing/india'> Book a Session</Link>
+              
             </button>
             <Link to='/pricing/india' className="bg-white text-teal-600 px-6 py-2 rounded-full border border-teal-600 hover:bg-teal-50 transition duration-300">
               Explore Services
