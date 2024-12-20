@@ -581,7 +581,7 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
       <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
       {/* Plan Price */}
       <p className="text-4xl font-bold mb-6">
-        {currency}{price} <span className="text-sm">/30-Minute</span>
+        {currency}{price} <span className="text-sm">/1-Minute</span>
       </p>
       {/* Plan Description */}
       <p className="text-gray-700 mb-6">
@@ -623,7 +623,7 @@ const Pricing = () => {
   const indianPlans = [
     {
       title: "Chat/Audio Consultation",
-      price: 1500,
+      price: 35,
       currency: "₹",
       description: "Chat and Audio tarot sessions for those who are looking for accurate and straightforward answers and need minimal energy support.",
       suitableFor: [
@@ -637,7 +637,7 @@ const Pricing = () => {
     },
     {
       title: "Video Consultation",
-      price: 2500,
+      price: 50,
       currency: "₹",
       description: "A highly engaging session that focuses on providing guidance with a deep connection and higher energy support.",
       suitableFor: [
@@ -649,8 +649,8 @@ const Pricing = () => {
       sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     },
     {
-      title: "Extended Session (45-Min)",
-      price: 3500,
+      title: "Extended Session (3-Min)",
+      price: 75,
       currency: "₹",
       description: "A comprehensive session with deeper focus on challenges and solutions, including an exclusive action plan for your personal growth.",
       suitableFor: [
@@ -667,7 +667,7 @@ const Pricing = () => {
   const internationalPlans = [
     {
       title: "Chat/Audio Consultation",
-      price: 30,
+      price: 40,
       currency: "$",
       description: "Chat and Audio tarot sessions for those who are looking for accurate and straightforward answers and need minimal energy support.",
       suitableFor: [
@@ -680,7 +680,7 @@ const Pricing = () => {
     },
     {
       title: "Video Consultation",
-      price: 40,
+      price: 60,
       currency: "$",
       description: "A highly engaging session that focuses on providing guidance with a deep connection and higher energy support.",
       suitableFor: [
@@ -693,7 +693,7 @@ const Pricing = () => {
     },
     {
       title: "Extended Session (45-Min)",
-      price: 60,
+      price: 80,
       currency: "$",
       description: "A comprehensive session with deeper focus on challenges and solutions, including an exclusive action plan for your personal growth.",
       suitableFor: [
