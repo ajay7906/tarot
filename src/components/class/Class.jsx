@@ -48,7 +48,8 @@ const TarotClassPage = () => {
           <h2 className="text-3xl font-semibold mb-6">Try Before You Buy</h2>
           <div className="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold mb-4">3-Day Free Demo</h3>
-            <p className="mb-6">Experience our teaching style and course content with a free 2-day demo.</p>
+            <p className="mb-6">Experience our teaching style and course content with a free 3-day demo.</p>
+            <p className="mb-6">3 short questions is free</p>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}

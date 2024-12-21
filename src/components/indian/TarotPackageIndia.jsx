@@ -60,7 +60,8 @@ const TarotPackagesPageIndia = () => {
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
         "Need quick advice on current issues",
-        "Need quick advice on upcoming challenges"
+        "Need quick advice on upcoming challenges",
+        "3 short questions is free"
       ],
       buttonText: "Book a Session"
     },
@@ -73,7 +74,8 @@ const TarotPackagesPageIndia = () => {
         "Need details on specific topics",
         "Need help identifying root-cause",
         "Need guidance for future challenges",
-        "Need an improvement action plan"
+        "Need an improvement action plan",
+         "3 short questions is free"
       ],
       buttonText: "Book a Session"
     },
@@ -87,7 +89,8 @@ const TarotPackagesPageIndia = () => {
         "Need details on multiple topics",
         "Need help resolving current challenges",
         "Need healing and anxiety management",
-        "Need a vent and support system"
+        "Need a vent and support system",
+         "3 short questions is free"
       ],
       buttonText: "Book a Session"
     }
@@ -104,7 +107,8 @@ const TarotPackagesPageIndia = () => {
         "Need help on pre-determined topics",
         "Need short or Yes/No type answers",
         "Need quick advice on current issues",
-        "Need guidance on future challenges"
+        "Need guidance on future challenges",
+         "3 short questions is free"
       ],
       buttonText: "Book a Session"
     },
@@ -117,7 +121,8 @@ const TarotPackagesPageIndia = () => {
         "Need details on specific topics",
         "Need help identifying root-cause",
         "Need guidance for future challenges",
-        "Need an improvement action plan"
+        "Need an improvement action plan",
+         "3 short questions is free"
       ],
       buttonText: "Book a Session"
     },
@@ -131,7 +136,8 @@ const TarotPackagesPageIndia = () => {
         "Need details on multiple topics",
         "Need help resolving current challenges",
         "Need healing and anxiety management",
-        "Need a vent and support system"
+        "Need a vent and support system",
+         "3 short questions is free"
       ],
       buttonText: "Book a Session"
     }
