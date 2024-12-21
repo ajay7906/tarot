@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const SessionExperience = () => {
   const steps = [
@@ -72,7 +73,7 @@ const SessionExperience = () => {
           className="flex justify-center mb-16"
         >
           <button className="bg-orange-400 text-white px-6 py-3 rounded-full hover:bg-orange-500 transition duration-300">
-            Book A Session
+            <Link to='/pricing/india'>Book A Session</Link>
           </button>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
