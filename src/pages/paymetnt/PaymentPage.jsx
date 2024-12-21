@@ -1,20 +1,25 @@
+
+
+
+
+
+
+
+
+
+
 // import React, { useState } from 'react';
 // import { useLocation, useNavigate } from 'react-router-dom';
-// import { ArrowLeft, Banknote, CreditCard, Wallet } from 'lucide-react';
+// import { ArrowLeft, Wallet } from 'lucide-react';
+// import QRCode from 'react-qr-code'; // Import from react-qr-code
 
 // const PaymentPage = () => {
 //   const location = useLocation();
 //   const navigate = useNavigate();
 //   const [selectedPayment, setSelectedPayment] = useState('upi');
-//   console.log(location.state);
-  
-//   // Get package details from location state
-//   const { packageDetails = {
-//     title: location.state.title,
-//     price: location.state.price,
-//     duration: 30,
-//     features: []   
-//   } } = location.state || {};
+//   const [showQRCode, setShowQRCode] = useState(false);
+
+//   const { packageDetails = { title: location.state.title, price: location.state.price, duration: 30, features: [] } } = location.state || {};
 
 //   const paymentMethods = [
 //     {
@@ -23,18 +28,6 @@
 //       description: 'Pay using any UPI app',
 //       icon: <Wallet className="w-6 h-6" />,
 //     },
-//     // {
-//     //   id: 'card',
-//     //   name: 'Card Payment',
-//     //   description: 'Credit or Debit card',
-//     //   icon: <CreditCard className="w-6 h-6" />,
-//     // },
-//     // {
-//     //   id: 'netbanking',
-//     //   name: 'Net Banking',
-//     //   description: 'Direct bank transfer',
-//     //   icon: <Banknote className="w-6 h-6" />,
-//     // }
 //   ];
 
 //   const handleBackClick = () => {
@@ -43,13 +36,19 @@
 
 //   const handlePaymentSubmit = (e) => {
 //     e.preventDefault();
-//     // Handle payment logic here
-//     console.log('Processing payment with method:', selectedPayment);
+//     if (selectedPayment === 'upi') {
+//       setShowQRCode(true); // Show the QR code popup
+//     } else {
+//       console.log('Processing payment with method:', selectedPayment);
+//     }
+//   };
+
+//   const closePopup = () => {
+//     setShowQRCode(false);
 //   };
 
 //   return (
 //     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-//       {/* Back Button */}
 //       <button
 //         onClick={handleBackClick}
 //         className="flex items-center text-gray-600 hover:text-gray-800 transition-colors mb-6"
@@ -60,14 +59,12 @@
 
 //       <div className="max-w-3xl mx-auto">
 //         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-//           {/* Header */}
 //           <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-8">
 //             <h1 className="text-3xl font-bold text-white">Complete Your Booking</h1>
 //             <p className="text-green-100 mt-2">Secure payment gateway</p>
 //           </div>
 
 //           <div className="p-6 lg:p-8">
-//             {/* Package Summary */}
 //             <div className="bg-gray-50 rounded-lg p-6 mb-8">
 //               <h2 className="text-xl font-semibold text-gray-800 mb-4">Order Summary</h2>
 //               <div className="flex justify-between items-center mb-2">
@@ -86,7 +83,6 @@
 //               </div>
 //             </div>
 
-//             {/* Payment Methods */}
 //             <div className="space-y-4">
 //               <h2 className="text-xl font-semibold text-gray-800 mb-4">Select Payment Method</h2>
 //               {paymentMethods.map((method) => (
@@ -115,9 +111,11 @@
 //                       <p className="text-sm text-gray-500">{method.description}</p>
 //                     </div>
 //                   </div>
-//                   <div className={`w-5 h-5 border-2 rounded-full ml-4 flex items-center justify-center ${
-//                     selectedPayment === method.id ? 'border-green-500' : 'border-gray-300'
-//                   }`}>
+//                   <div
+//                     className={`w-5 h-5 border-2 rounded-full ml-4 flex items-center justify-center ${
+//                       selectedPayment === method.id ? 'border-green-500' : 'border-gray-300'
+//                     }`}
+//                   >
 //                     {selectedPayment === method.id && (
 //                       <div className="w-3 h-3 bg-green-500 rounded-full" />
 //                     )}
@@ -126,7 +124,6 @@
 //               ))}
 //             </div>
 
-//             {/* Payment Button */}
 //             <button
 //               onClick={handlePaymentSubmit}
 //               className="w-full mt-8 bg-green-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -134,7 +131,24 @@
 //               Pay ₹{packageDetails.price}
 //             </button>
 
-//             {/* Security Notice */}
+//             {showQRCode && (
+//               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+//                 <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+//                   <h2 className="text-xl font-semibold text-gray-800 mb-4">Scan to Pay</h2>
+//                   <QRCode
+//                     value={`upi://pay?pa=example@upi&pn=Example&am=${packageDetails.price}&cu=INR`}
+//                     size={200}
+//                   />
+//                   <button
+//                     onClick={closePopup}
+//                     className="w-full mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
+//                   >
+//                     Close
+//                   </button>
+//                 </div>
+//               </div>
+//             )}
+
 //             <div className="mt-6 text-center text-sm text-gray-500">
 //               <p className="flex items-center justify-center">
 //                 <svg
@@ -181,26 +195,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Wallet } from 'lucide-react';
-import QRCode from 'react-qr-code'; // Import from react-qr-code
-
+import QrcodeImg from '../../assets/qrcode1.jpg'
 const PaymentPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -225,7 +223,7 @@ const PaymentPage = () => {
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
     if (selectedPayment === 'upi') {
-      setShowQRCode(true); // Show the QR code popup
+      setShowQRCode(true);
     } else {
       console.log('Processing payment with method:', selectedPayment);
     }
@@ -323,10 +321,13 @@ const PaymentPage = () => {
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="bg-white rounded-lg shadow-lg p-6 w-96">
                   <h2 className="text-xl font-semibold text-gray-800 mb-4">Scan to Pay</h2>
-                  <QRCode
-                    value={`upi://pay?pa=example@upi&pn=Example&am=${packageDetails.price}&cu=INR`}
-                    size={200}
-                  />
+                  <div className="flex justify-center">
+                    <img 
+                      src={QrcodeImg}
+                      alt="QR Code for payment"
+                      className="w-68 h-68 object-contain"
+                    />
+                  </div>
                   <button
                     onClick={closePopup}
                     className="w-full mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
