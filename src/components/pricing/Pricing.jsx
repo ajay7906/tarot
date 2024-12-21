@@ -1,32 +1,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => (
-  <motion.div 
+  <motion.div
     whileHover={{ scale: 1.05 }}
     className="bg-white rounded-lg shadow-xl p-6 m-4 flex flex-col justify-between max-w-xs"
   >
@@ -35,8 +15,9 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
       <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
       {/* Plan Price */}
       <p className="text-4xl font-bold mb-6">
-        {currency}{price} <span className="text-sm">/1-Minute</span>
+        {currency}{price} <span className="text-sm">/{currency === "$" ? "30-Minute" : "1-Minute"}</span>
       </p>
+
       {/* Plan Description */}
       <p className="text-gray-700 mb-6">
         {description}
@@ -61,12 +42,12 @@ const Pricing = () => {
   const [isIndian, setIsIndian] = useState(true); // Toggle between Indian and International pricing   
   const navigate = useNavigate();
   const handleBooking = (data) => {
-    
-    
+
+
     navigate('/payment',
       {
-        state:{
-          data        
+        state: {
+          data
 
         }
       }
@@ -86,7 +67,7 @@ const Pricing = () => {
         "Need a combination of clarity and energy support",
         "Do not need in-session intervention",
         "Need an improvement action plan",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com"
     },
@@ -100,7 +81,7 @@ const Pricing = () => {
         "Prefer visual interaction for better clarity",
         "Need a combination of clarity and energy support",
         "Desire real-time interventions during the session",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     },
@@ -114,7 +95,7 @@ const Pricing = () => {
         "Need more time to dive deep into issues",
         "Expect a detailed follow-up action plan",
         "Desire WhatsApp support for one week",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     }
@@ -132,7 +113,7 @@ const Pricing = () => {
         "Do not struggle with focus and low energy",
         "Do not need in-session intervention",
         "Need an improvement action plan",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "Need slot details? Connect through WhatsApp or email us at tarotbydeepa@gmail.com"
     },
@@ -146,7 +127,7 @@ const Pricing = () => {
         "Prefer visual interaction for better clarity",
         "Need a combination of clarity and energy support",
         "Desire real-time interventions during the session",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com.l."
     },
@@ -160,7 +141,7 @@ const Pricing = () => {
         "Need more time to dive deep into issues",
         "Expect a detailed follow-up action plan",
         "Desire WhatsApp support for one week",
-         "3 short questions is free"
+        "3 short questions is free"
       ],
       sessionDetails: "For slot availability and details, connect through WhatsApp or email us at tarotbydeepa@gmail.com."
     }
@@ -201,7 +182,7 @@ const Pricing = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               className="w-full md:w-1/2 lg:w-1/3"
-              onClick={()=>handleBooking(plan)}
+              onClick={() => handleBooking(plan)}
             >
               <PricingCard {...plan} />
             </motion.div>
