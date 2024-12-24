@@ -289,7 +289,7 @@ const AuthForm = () => {
           },
         });
         // Call login API
-        const response = await axios.post('http://88.222.213.80:5000/api/signin', { email, password });
+        const response = await axios.post('https://tarotbydeepa.com:4000/api/signin', { email, password });
         console.log('Login response:', response.data);
 
         const token = response.data.token;
@@ -316,7 +316,7 @@ const AuthForm = () => {
         }
       } else {
         // Call signup API
-        const response = await axios.post('http://88.222.213.80:5000/api/signup', { name: username, email, password });
+        const response = await axios.post('https://tarotbydeepa.com:4000/api/signup', { name: username, email, password });
         console.log('Signup response:', response.data);
         
         if (response.status === 201) {
