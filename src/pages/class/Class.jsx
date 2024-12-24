@@ -509,7 +509,7 @@ const TarotClasses = () => {
       title: 'Advanced Class',
       price: 2500000, // in cents
       description: 'Master advanced techniques and spreads.',
-      features: ['30-35 days class will be held', 'PDF will provide ','	Tarot Reading Basic ', 'E-Certificate  of Mastery', '3 days demo class', '	Free Gift Hampers'], 
+      features: ['45 days class will be held', 'PDF will provide ','	Tarot Reading Basic ', 'E-Certificate  of Mastery', '3 days demo class', '	Free Gift Hampers'], 
     },
   ];
 
