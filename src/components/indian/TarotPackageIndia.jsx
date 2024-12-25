@@ -2,10 +2,11 @@
 
 
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import International from '../../assets/intern.avif'
 import { useNavigate } from 'react-router-dom';
+import PaymentFormPopup from '../paymentform/PaymentFormPopup';
 
 const PackageCard = ({ title, price, duration, originalPrice, features, buttonText }) => (
 
@@ -37,18 +38,44 @@ const PackageCard = ({ title, price, duration, originalPrice, features, buttonTe
 
 const TarotPackagesPageIndia = () => {
   const navigate = useNavigate();
-  const handleBooking = (data) => {
-    console.log(data);
-    
-    navigate('/payment',
-      {
-        state:{
-          data
 
-        }
+
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  
+  // Modify your existing handleBooking function
+  const handleBooking = (data) => {
+    setSelectedPackage(data);
+    setIsPopupOpen(true);
+  };
+
+  // Add this new function to handle form submission
+  const handlePaymentFormSubmit = (formData) => {
+    // Here you can handle the form submission
+    console.log('Form submitted:', formData);
+    // Close the popup
+    setIsPopupOpen(false);
+    // Navigate to payment page with the form data
+    navigate('/payment', {
+      state: {
+        ...formData,
+        packageDetails: selectedPackage
       }
-    )
-  }
+    });
+  };
+  // const handleBooking = (data) => {
+  //   console.log(data);
+    
+  //   navigate('/payment',
+  //     {
+  //       state:{
+  //         data
+
+  //       }
+  //     }
+  //   )
+  // }
   const videoPackages = [
     {
       title: "flexible reading me",
@@ -234,7 +261,26 @@ const TarotPackagesPageIndia = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> 
+
+
+
+
+
+
+      <PaymentFormPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        packageDetails={selectedPackage}
+        onSubmit={handlePaymentFormSubmit}
+      />
+
+
+
+
+
+
+
     </div>
   );
 };
