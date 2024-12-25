@@ -13,40 +13,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-// const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => ( 
-  
-
-//   <motion.div
-//     whileHover={{ scale: 1.05 }}
-//     className="bg-white rounded-lg shadow-xl p-6 m-4 flex flex-col justify-between max-w-xs"
-//   >
-//     <div>
-//       {/* Plan Title */}
-//       <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
-//       {/* Plan Price */}
-//       <p className="text-4xl font-bold mb-6">
-//         {currency}{price} <span className="text-sm">/{currency === "$" ? "30-Minute" : "1-Minute"}</span>
-//       </p>
-
-//       {/* Plan Description */}
-//       <p className="text-gray-700 mb-6">
-//         {description}
-//       </p>
-//       {/* Suitable For Section */}
-//       <h4 className="text-lg font-semibold text-green-600 mb-4">Suitable for those who:</h4>
-//       <ul className="text-gray-600 mb-8">
-//         {suitableFor.map((point, index) => (
-//           <li key={index} className="mb-2">✓ {point}</li>
-//         ))}
-//       </ul>
-//     </div>
-//     {/* Session Details */}
-//     <p className="text-gray-600 mb-6">{sessionDetails}</p>
-//     <button className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300" onClick={() => handleBooking(currency)}> 
-//       Book a Session
-//     </button>
-//   </motion.div>
-// );
 
 
 const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => {
