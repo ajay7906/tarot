@@ -3,7 +3,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import PaymentForm from '../paymentform/PaymentForm';
+import Modal from '../paymentform/Modal';
 
 
 
@@ -17,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => {
   const navigate = useNavigate(); // Call useNavigate within the component
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleBooking = (currency) => {
     console.log(currency);
@@ -48,10 +51,48 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
       <p className="text-gray-600 mb-6">{sessionDetails}</p>
       <button
         className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
-        onClick={() => handleBooking(currency)} // Call the function
+        onClick={() => setIsModalOpen(true)} // Call the function
       >
         Book a Session
       </button>
+
+
+
+
+
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="flex">
+          {/* Left Side */}
+          <div className="w-1/2 flex items-center justify-center p-4">
+            <img
+              src="/path-to-logo.png"
+              alt="Company Logo"
+              className="max-h-24"
+            />
+          </div>
+          {/* Right Side */}
+          <div className="w-1/2">
+            <PaymentForm
+              onSubmit={(data) => {
+                alert('Form submitted: ' + JSON.stringify(data));
+                setIsModalOpen(false);
+              }}
+            />
+          </div>
+        </div>
+      </Modal>
+
+
+
+
+
+
+
+
+
+
+
     </motion.div>
   );
 };
@@ -70,9 +111,9 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
 
 const Pricing = () => {
   const [isIndian, setIsIndian] = useState(true); // Toggle between Indian and International pricing   
- 
- 
+
   
+
   const indianPlans = [
     {
       title: "Chat/Audio Consultation",
@@ -167,6 +208,14 @@ const Pricing = () => {
 
   return (
     <section className="py-20 bg-gray-100">
+
+
+
+
+
+
+
+
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-center text-green-800 mb-12">Packages Start From</h2>
@@ -196,11 +245,11 @@ const Pricing = () => {
           {(isIndian ? indianPlans : internationalPlans).map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }} 
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               className="w-full md:w-1/2 lg:w-1/3"
-             
+
             >
               <PricingCard {...plan} />
             </motion.div>
