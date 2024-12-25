@@ -105,22 +105,7 @@ const PaymentFormPopup = ({ isOpen, onClose, packageDetails, onSubmit }) => {
               />
             </div>
 
-            {/* Amount input */}
-            {/* <div>
-              <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-1">
-                Amount (₹)
-              </label>
-              <input
-                type="number"
-                id="amount"
-                name="amount"
-                value={formData.amount}
-                onChange={handleChange}
-                required
-                readOnly
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50"
-              />
-            </div> */}
+        
           </div>
 
           {/* Submit button */}
