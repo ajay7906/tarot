@@ -16,7 +16,9 @@ const PaymentFormPopup = ({ isOpen, onClose, packageDetails, onSubmit }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { 
+    console.log( 'submit form');
+    
     e.preventDefault();
     onSubmit(formData);
   };
