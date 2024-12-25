@@ -13,8 +13,7 @@ const AnimatedFooter = () => {
   const socialIcons = [
     { Icon: FaFacebook, href: 'https://www.facebook.com/share/7KzUh9k5HSevwxHs/' },
     { Icon: FaInstagram, href: 'https://www.instagram.com/tarotbydeepaa/profilecard/?igsh=NWlxY3A5cW42YTM3' },
-    { Icon: FaYoutube, href: '#' },
-    { Icon: FaLinkedin, href: '#' },
+   
   ];
 
   const footerLinks = [
