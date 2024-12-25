@@ -32,7 +32,7 @@ const UPIVerificationForm = ({ onClose, packageDetails, userData, onSubmit }) =>
       await onSubmit({
         ...verificationData,
         packageDetails,
-        userData
+        // userData
       });
       
       onClose();

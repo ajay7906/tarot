@@ -6,12 +6,13 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Wallet } from 'lucide-react';
 import QrcodeImg from '../../assets/qrcode1.jpg'
+import PaymentVerificationForm from '../../components/paymentform/UPIVerificationForm'
 const PaymentPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedPayment, setSelectedPayment] = useState('upi');
   const [showQRCode, setShowQRCode] = useState(false);
-
+  const [showVerificationForm, setShowVerificationForm] = useState(false);
   const { packageDetails = { title: location.state.title, price: location.state.price, duration: 30, features: [] } } = location.state || {};
 
   const paymentMethods = [
@@ -39,6 +40,44 @@ const PaymentPage = () => {
   const closePopup = () => {
     setShowQRCode(false);
   };
+
+
+
+
+
+  const handleVerifyPayment = () => {
+    setShowQRCode(false);
+    setShowVerificationForm(true);
+  };
+
+  const handleVerificationSubmit = async (formData) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/payment/verify', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('Payment verification submitted successfully! We will confirm your booking shortly.');
+        navigate('/thank-you');
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (error) {
+      alert('Failed to submit verification: ' + error.message);
+    }
+  };
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -87,11 +126,10 @@ const PaymentPage = () => {
               {paymentMethods.map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${
-                    selectedPayment === method.id
+                  className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${selectedPayment === method.id
                       ? 'border-green-500 bg-green-50'
                       : 'border-gray-200 hover:border-green-200'
-                  }`}
+                    }`}
                 >
                   <input
                     type="radio"
@@ -111,9 +149,8 @@ const PaymentPage = () => {
                     </div>
                   </div>
                   <div
-                    className={`w-5 h-5 border-2 rounded-full ml-4 flex items-center justify-center ${
-                      selectedPayment === method.id ? 'border-green-500' : 'border-gray-300'
-                    }`}
+                    className={`w-5 h-5 border-2 rounded-full ml-4 flex items-center justify-center ${selectedPayment === method.id ? 'border-green-500' : 'border-gray-300'
+                      }`}
                   >
                     {selectedPayment === method.id && (
                       <div className="w-3 h-3 bg-green-500 rounded-full" />
@@ -135,12 +172,22 @@ const PaymentPage = () => {
                 <div className="bg-white rounded-lg shadow-lg p-6 w-96">
                   <h2 className="text-xl font-semibold text-gray-800 mb-4">Scan to Pay</h2>
                   <div className="flex justify-center">
-                    <img 
+                    <img
                       src={QrcodeImg}
                       alt="QR Code for payment"
                       className="w-68 h-68 object-contain"
                     />
                   </div>
+
+                  <button
+                    onClick={handleVerifyPayment}
+                    className="w-full mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors"
+                  >
+                    I've Made the Payment
+                  </button>
+
+
+
                   <button
                     onClick={closePopup}
                     className="w-full mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
@@ -170,6 +217,17 @@ const PaymentPage = () => {
           </div>
         </div>
       </div>
+
+
+
+      {showVerificationForm && (
+        <PaymentVerificationForm
+          onClose={() => setShowVerificationForm(false)}
+          packageDetails={packageDetails}
+          // userData={userData}
+          onSubmit={handleVerificationSubmit}
+        />
+      )}
     </div>
   );
 };
