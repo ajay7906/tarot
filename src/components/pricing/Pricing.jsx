@@ -51,7 +51,7 @@ const PricingCard = ({ title, price, currency, description, suitableFor, session
       <p className="text-gray-600 mb-6">{sessionDetails}</p>
       <button
         className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
-        onClick={() => setIsModalOpen(true)} // Call the function
+        onClick={() => handleBooking(currency)} // Call the function
       >
         Book a Session
       </button>
