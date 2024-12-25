@@ -3,58 +3,110 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
-const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    className="bg-white rounded-lg shadow-xl p-6 m-4 flex flex-col justify-between max-w-xs"
-  >
-    <div>
-      {/* Plan Title */}
-      <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
-      {/* Plan Price */}
-      <p className="text-4xl font-bold mb-6">
-        {currency}{price} <span className="text-sm">/{currency === "$" ? "30-Minute" : "1-Minute"}</span>
-      </p>
 
-      {/* Plan Description */}
-      <p className="text-gray-700 mb-6">
-        {description}
-      </p>
-      {/* Suitable For Section */}
-      <h4 className="text-lg font-semibold text-green-600 mb-4">Suitable for those who:</h4>
-      <ul className="text-gray-600 mb-8">
-        {suitableFor.map((point, index) => (
-          <li key={index} className="mb-2">✓ {point}</li>
-        ))}
-      </ul>
-    </div>
-    {/* Session Details */}
-    <p className="text-gray-600 mb-6">{sessionDetails}</p>
-    <button className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300">
-      Book a Session
-    </button>
-  </motion.div>
-);
+
+
+
+
+
+
+
+// const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => ( 
+  
+
+//   <motion.div
+//     whileHover={{ scale: 1.05 }}
+//     className="bg-white rounded-lg shadow-xl p-6 m-4 flex flex-col justify-between max-w-xs"
+//   >
+//     <div>
+//       {/* Plan Title */}
+//       <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
+//       {/* Plan Price */}
+//       <p className="text-4xl font-bold mb-6">
+//         {currency}{price} <span className="text-sm">/{currency === "$" ? "30-Minute" : "1-Minute"}</span>
+//       </p>
+
+//       {/* Plan Description */}
+//       <p className="text-gray-700 mb-6">
+//         {description}
+//       </p>
+//       {/* Suitable For Section */}
+//       <h4 className="text-lg font-semibold text-green-600 mb-4">Suitable for those who:</h4>
+//       <ul className="text-gray-600 mb-8">
+//         {suitableFor.map((point, index) => (
+//           <li key={index} className="mb-2">✓ {point}</li>
+//         ))}
+//       </ul>
+//     </div>
+//     {/* Session Details */}
+//     <p className="text-gray-600 mb-6">{sessionDetails}</p>
+//     <button className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300" onClick={() => handleBooking(currency)}> 
+//       Book a Session
+//     </button>
+//   </motion.div>
+// );
+
+
+const PricingCard = ({ title, price, currency, description, suitableFor, sessionDetails }) => {
+  const navigate = useNavigate(); // Call useNavigate within the component
+
+  const handleBooking = (currency) => {
+    console.log(currency);
+    if (currency === "₹") {
+      navigate('/pricing/india');
+    } else {
+      navigate('/pricing/international');
+    }
+  };
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-white rounded-lg shadow-xl p-6 m-4 flex flex-col justify-between max-w-xs"
+    >
+      <div>
+        <h3 className="text-xl font-bold text-green-700 mb-4">{title}</h3>
+        <p className="text-4xl font-bold mb-6">
+          {currency}{price} <span className="text-sm">/{currency === "$" ? "30-Minute" : "1-Minute"}</span>
+        </p>
+        <p className="text-gray-700 mb-6">{description}</p>
+        <h4 className="text-lg font-semibold text-green-600 mb-4">Suitable for those who:</h4>
+        <ul className="text-gray-600 mb-8">
+          {suitableFor.map((point, index) => (
+            <li key={index} className="mb-2">✓ {point}</li>
+          ))}
+        </ul>
+      </div>
+      <p className="text-gray-600 mb-6">{sessionDetails}</p>
+      <button
+        className="bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
+        onClick={() => handleBooking(currency)} // Call the function
+      >
+        Book a Session
+      </button>
+    </motion.div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Pricing = () => {
   const [isIndian, setIsIndian] = useState(true); // Toggle between Indian and International pricing   
-  const navigate = useNavigate();
-  const handleBooking = (data) => {
-
-
-    navigate('/payment',
-      {
-        state: {
-          data
-
-        }
-      }
-    )
-  }
-
-  // Expanded Indian Pricing Plans (with more detailed content)
+ 
+ 
+  
   const indianPlans = [
     {
       title: "Chat/Audio Consultation",
@@ -178,11 +230,11 @@ const Pricing = () => {
           {(isIndian ? indianPlans : internationalPlans).map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               className="w-full md:w-1/2 lg:w-1/3"
-              onClick={() => handleBooking(plan)}
+             
             >
               <PricingCard {...plan} />
             </motion.div>
